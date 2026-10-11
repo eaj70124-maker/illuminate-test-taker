@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Illuminate Test Taker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-mark">I</div>
+          <div>
+            <p class="eyebrow">Assessment Portal</p>
+            <h1>Illuminate</h1>
+          </div>
+        </div>
+        <div class="status-pill">Code-generated test</div>
+      </header>
+
+      <main class="content-card">
+        <section class="entry-panel">
+          <div class="panel-copy">
+            <p class="label">Enter test code</p>
+            <h2>Generate a unique assessment from any 8-digit code.</h2>
+          </div>
+
+          <div class="input-row">
+            <input
+              id="testCode"
+              type="text"
+              maxlength="8"
+              inputmode="numeric"
+              placeholder="e.g. 48291347"
+              aria-label="Test code"
+            />
+            <button id="generateBtn" class="primary-btn">Generate Test</button>
+          </div>
+
+          <p class="helper-text">
+            The same code always creates the same test. Different codes create different assessments.
+          </p>
+        </section>
+
+        <section id="testPanel" class="test-panel hidden" aria-live="polite">
+          <div class="test-header">
+            <div>
+              <p class="label">Assessment</p>
+              <h3 id="testTitle">Test</h3>
+            </div>
+            <div class="code-chip" id="codeChip">Code: --</div>
+          </div>
+
+          <div id="questionsContainer" class="questions"></div>
+
+          <div class="submit-wrap">
+            <button id="submitBtn" class="primary-btn">Submit Answers</button>
+          </div>
+        </section>
+
+        <section id="resultsPanel" class="results-panel hidden" aria-live="polite">
+          <div class="results-header">
+            <p class="label">Results</p>
+            <h3 id="resultsTitle">You finished the assessment.</h3>
+          </div>
+
+          <div class="score-ring">
+            <div>
+              <span id="scoreValue">0%</span>
+              <small>Score</small>
+            </div>
+          </div>
+
+          <div id="resultSummary" class="result-summary"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
